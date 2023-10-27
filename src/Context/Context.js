@@ -1,4 +1,4 @@
-import { createContext, React } from "react";
+import { createContext, React, useEffect, useState } from "react";
 import {getAuth} from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
@@ -9,8 +9,19 @@ export const authProvider = createContext();
 
 const Context = ({children}) => {
 
-    const authInfo = {
-        name: 'borish',
+    const [AllCourses, setAllCourses] =  useState([]);
+
+    
+
+    useEffect(()=>{
+        fetch('http://localhost:8080/courses')
+        .then(res => res.json())
+        .then(data => setAllCourses(data))
+        .catch(error => console.error(error))
+    },[])
+
+    const authInfo = {AllCourses,
+        
     }
     return (
         <div>
