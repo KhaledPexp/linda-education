@@ -3,7 +3,7 @@ import { FaStar, FaStarHalf, Falike } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = ({course}) => {
-    console.log(course);
+    
     return (
         <div>
             <img className='w-auto rounded' src={course.image} alt="" />

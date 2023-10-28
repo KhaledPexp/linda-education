@@ -3,7 +3,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
 import Courses from '../components/Courses/Courses';
 import Home from '../components/Home/Home';
-import PopularCourse from '../components/PopularCourses/PopularCourse';
 import Business from '../components/Courses/pages/Business';
 import History from '../components/Courses/pages/History';
 import Computer from '../components/Courses/pages/Computer';
@@ -11,6 +10,8 @@ import Literature from '../components/Courses/pages/Literature';
 import Language from '../components/Courses/pages/Language';
 import AllCourses from '../components/Courses/pages/AllCourses';
 import Teaching from '../components/Courses/pages/Teaching';
+import Faq from '../components/FAQ/Faq';
+import Blog from '../components/Blog/Blog';
 
 const routes = createBrowserRouter([
         {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
                     path: '/courses',
                     element: <Courses></Courses>,
                     children: [
+                        {
+                            path:'/courses',
+                            element:<AllCourses></AllCourses>
+                        },
                         {
                             path:'/courses/business',
                             element:<Business></Business>
@@ -57,9 +62,13 @@ const routes = createBrowserRouter([
                     ]
                 },
                 {
-                    path: '/popular',
-                    element: <PopularCourse></PopularCourse>
-                }
+                    path:'/faq',
+                    element: <Faq></Faq>
+                },
+                {
+                    path:'/blog',
+                    element: <Blog></Blog>
+                },
             ]   
         },
 
