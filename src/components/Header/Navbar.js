@@ -16,8 +16,8 @@ const Navbar = () => {
                 <NavLink className='m-2' to='/blog'>Blog</NavLink>
             </div>
             <div>
-                <NavLink className='m-2 p-2' to='sign-in'>Sign in</NavLink>
-                <NavLink className='m-2 px-4 py-3 border border-blue-400 rounded hover:bg-blue-500 hover:text-white' to='sign-up'>Sign up</NavLink>
+                <NavLink className='m-2 p-2' to='/signIn'>Sign in</NavLink>
+                <NavLink className='m-2 px-4 py-3 border border-blue-400 rounded hover:bg-blue-500 hover:text-white' to='/signUp'>Sign up</NavLink>
             </div>
         </div>
     );

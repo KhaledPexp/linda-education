@@ -13,6 +13,7 @@ import Teaching from '../components/Courses/pages/Teaching';
 import Faq from '../components/FAQ/Faq';
 import Blog from '../components/Blog/Blog';
 import CourseDetails from '../components/Courses/Course-Details/CourseDetails';
+import Login from '../components/AuthCompoents/Login';
 
 const routes = createBrowserRouter([
         {
@@ -76,6 +77,10 @@ const routes = createBrowserRouter([
                     path:'/blog',
                     element: <Blog></Blog>
                 },
+                {
+                    path:'/signIn',
+                    element:<Login></Login>
+                }
             ]   
         },
 
