@@ -26,7 +26,7 @@ const Courses = () => {
                     <h1 className='text-white text-6xl p-10'>{currentCourse? currentCourse:'Course'}</h1>
                 </div>
             </section>
-            <section className='courses  flex justify-between mx-16 my-28 leading-loose text-xl' >
+            <section className='courses  flex justify-between mx-16 my-24 p-5 leading-loose text-xl' >
                 <aside className='px-5 w-auto'>
                         <h2 className='text-4xl pb-3'>Subjects</h2>
                         <ul>

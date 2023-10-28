@@ -11,8 +11,6 @@ const Context = ({children}) => {
 
     const [AllCourses, setAllCourses] =  useState([]);
 
-    
-
     useEffect(()=>{
         fetch('http://localhost:8080/courses')
         .then(res => res.json())

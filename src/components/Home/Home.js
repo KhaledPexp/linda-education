@@ -5,7 +5,6 @@ import PopularCourse from '../PopularCourses/PopularCourse';
 
 const Home = () => {
     const popularCourses = useLoaderData();
-    console.log(popularCourses.length);
     
     return ( 
         <div>

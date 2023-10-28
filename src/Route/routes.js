@@ -12,6 +12,7 @@ import AllCourses from '../components/Courses/pages/AllCourses';
 import Teaching from '../components/Courses/pages/Teaching';
 import Faq from '../components/FAQ/Faq';
 import Blog from '../components/Blog/Blog';
+import CourseDetails from '../components/Courses/Course-Details/CourseDetails';
 
 const routes = createBrowserRouter([
         {
@@ -58,8 +59,14 @@ const routes = createBrowserRouter([
                         {
                             path:'/courses/all-courses',
                             element:<AllCourses></AllCourses>
-                        }
+                        },
+
                     ]
+                },
+                {
+                    path:'/course-details/:id',
+                    element: <CourseDetails></CourseDetails>,
+                    loader: ({params}) => fetch(`http://localhost:8080/course/${params.id}`)
                 },
                 {
                     path:'/faq',

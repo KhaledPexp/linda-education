@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PopularCourse = ({course}) => {
-    console.log(course);
+    
     return (
         <div className='flex flex-col justify-between  border border-gray-100 relative'>
             <div>

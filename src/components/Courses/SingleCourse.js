@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaStar, FaStarHalf, Falike } from 'react-icons/fa';
+import { FaStar, FaStarHalf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = ({course}) => {
@@ -7,8 +7,8 @@ const SingleCourse = ({course}) => {
     return (
         <div>
             <img className='w-auto rounded' src={course.image} alt="" />
-            <div className='py-5'>
-                <h2 className='text-2xl font-bold leading-8'>{course.name}</h2>
+            <div className='pt-5 pb-1'>
+                <h2 className='text-2xl font-bold leading-8'> <Link to={`/course-details/${course.id}`}>{course.name}</Link> </h2>
                 <p className='mb-4 text-gray-700 text-base leading-normal py-4'>{course.short_description}</p>
             </div>
             
