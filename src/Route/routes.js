@@ -14,6 +14,7 @@ import Faq from '../components/FAQ/Faq';
 import Blog from '../components/Blog/Blog';
 import CourseDetails from '../components/Courses/Course-Details/CourseDetails';
 import Login from '../components/AuthCompoents/Login';
+import SignUp from '../components/AuthCompoents/SignUp';
 
 const routes = createBrowserRouter([
         {
@@ -80,6 +81,10 @@ const routes = createBrowserRouter([
                 {
                     path:'/signIn',
                     element:<Login></Login>
+                },
+                {
+                    path:'/signUp',
+                    element:<SignUp></SignUp>
                 }
             ]   
         },
