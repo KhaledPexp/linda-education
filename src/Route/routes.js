@@ -18,6 +18,7 @@ import SignUp from '../components/AuthCompoents/SignUp';
 import CheckOut from '../components/AuthCompoents/CheckOut';
 import PrivateRoutes from './PrivateRoutes';
 import UserProfile from '../components/UserProfile/UserProfile';
+import ErroPage from '../components/ErrorPage/ErroPage';
 
 
 const routes = createBrowserRouter([
@@ -99,8 +100,13 @@ const routes = createBrowserRouter([
                     path:'/userProfile',
                     element:<UserProfile></UserProfile>
                 }
+                
             ]   
         },
+        {
+            path:'*',
+            element: <ErroPage></ErroPage>
+        }
 
 ])
 

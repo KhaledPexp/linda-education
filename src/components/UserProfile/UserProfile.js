@@ -22,7 +22,11 @@ const UserProfile = () => {
             
             console.log(name, photoURL);
             updateUser(name, photoURL)
-                .then()
+                .then(
+                    () => {
+                        form.reset();
+                    }
+                )
                 .catch(error => console.error(error))
     }
     

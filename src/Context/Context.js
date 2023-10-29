@@ -1,5 +1,5 @@
 import { createContext, React, useEffect, useState } from "react";
-import {getAuth, onAuthStateChanged, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
 
@@ -21,11 +21,27 @@ const Context = ({children}) => {
             photoURL: photoURL
         }));
     }
+    // sign up with email and password
+    const signUpWithpassword = (email, password) =>{
+        return createUserWithEmailAndPassword(auth, email, password);
 
+    }
+    // sign in with email
+    const signInWithPassword = (email, password) =>{
+
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+    //sign in with google 
     const signInGoogle = (provider) => {
 
         return(signInWithPopup(auth, provider));
     }
+    //sign in with github
+    const signInGithub = (provider) =>{
+
+        return signInWithPopup(auth, provider);
+    }
+
     const signOutAll = () => {
             return(signOut(auth));
     }
@@ -50,7 +66,7 @@ const Context = ({children}) => {
         .catch(error => console.error(error))
     },[])
 
-    const authInfo = {AllCourses, user,loader, updateUser, signInGoogle, signOutAll}
+    const authInfo = {AllCourses, user,loader, updateUser, signInGoogle, signInGithub, signUpWithpassword, signInWithPassword, signOutAll}
     return (
         <div>
             <authProvider.Provider value={authInfo}>
