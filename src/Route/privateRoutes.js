@@ -8,10 +8,12 @@ const PrivateRoutes = ({children}) => {
     const {user, loader} = useContext(authProvider);
 
     if(loader){
-        return(<div><button type="button" className="bg-indigo-500 ..." disabled>
-        <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"> </svg>
-        Processing...
-      </button></div>);
+        return(<div className='flex justify-center my-10 p-5'>
+          <button type="button" disabled>
+            <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"> </svg>
+            Processing...
+          </button>
+      </div>);
     }
     if(!user?.emailVerified){
       return(<Navigate to='/signIn' state={{from: location}}  replace></Navigate>)
