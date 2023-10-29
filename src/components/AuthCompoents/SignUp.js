@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { authProvider } from '../../Context/Context';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
+
+    const { signInGoogle} = useContext(authProvider);
+    const googleProvider = new GoogleAuthProvider();
+
+    const handelGoogleLogin = () => {
+        signInGoogle (googleProvider)
+            .then (result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch (error => console.error(error))
+        
+    }
     return (
         <div>
             <section className='info'>
@@ -38,7 +53,7 @@ const SignUp = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                                 <div className="py-3 ">
-                                    <div className="flex bg-blue-400 text-white p-4 rounded justify-center cursor-pointer"><span className='pr-2'> <FaGoogle/></span> Google</div>
+                                    <div onClick={handelGoogleLogin} className="flex bg-blue-400 text-white p-4 rounded justify-center cursor-pointer"><span className='pr-2'> <FaGoogle/></span> Google</div>
                                 </div>
                                 <div className="py-3">
                                     <div className="flex bg-black text-white p-4 rounded justify-center cursor-pointer">

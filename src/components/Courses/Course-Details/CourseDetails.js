@@ -35,7 +35,7 @@ const CourseDetails = () => {
                             <p className='ps-4'>{singleCourseDetails.reviews}</p>
                             <p className='ps-4'>Rating: {singleCourseDetails.rating}</p>
                         </div>
-                        <div className='flex justify-center'><Link className='text-center'><button className='flex justify-between items-center btn rounded bg-amber-300 px-6 py-3 hover:bg-amber-200 mt-5'>Get Prime Access <span className='ps-2'><FaArrowRight/></span></button></Link></div>
+                        <div className='flex justify-center'><Link className='text-center'to={`/checkOut/${singleCourseDetails.id}`}><button className='flex justify-between items-center btn rounded bg-amber-300 px-6 py-3 hover:bg-amber-200 mt-5'>Get Prime Access <span className='ps-2'><FaArrowRight/></span></button></Link></div>
                      </div>
                 </div>
 

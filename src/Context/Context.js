@@ -13,6 +13,7 @@ export const authProvider = createContext();
 const Context = ({children}) => {
 
     const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(true);
 
     const signInGoogle = (provider) => {
 
@@ -26,6 +27,7 @@ const Context = ({children}) => {
         const unsubscribe =  onAuthStateChanged(auth, (currentUser)=>{
             console.log('user state change', currentUser);
             setUser(currentUser);
+            setLoader(false);
         })
         return () => {
             unsubscribe();
@@ -41,7 +43,7 @@ const Context = ({children}) => {
         .catch(error => console.error(error))
     },[])
 
-    const authInfo = {AllCourses, user, signInGoogle, signOutAll}
+    const authInfo = {AllCourses, user,loader, signInGoogle, signOutAll}
     return (
         <div>
             <authProvider.Provider value={authInfo}>

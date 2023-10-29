@@ -15,6 +15,10 @@ import Blog from '../components/Blog/Blog';
 import CourseDetails from '../components/Courses/Course-Details/CourseDetails';
 import Login from '../components/AuthCompoents/Login';
 import SignUp from '../components/AuthCompoents/SignUp';
+import CheckOut from '../components/AuthCompoents/CheckOut';
+import PrivateRoutes from './PrivateRoutes';
+import UserProfile from '../components/UserProfile/UserProfile';
+
 
 const routes = createBrowserRouter([
         {
@@ -85,6 +89,15 @@ const routes = createBrowserRouter([
                 {
                     path:'/signUp',
                     element:<SignUp></SignUp>
+                },
+                {
+                    path:'/checkOut/:id',
+                    element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>,
+                    loader: ({params}) => fetch(`http://localhost:8080/checkOut/${params.id}`)
+                },
+                {
+                    path:'/userProfile',
+                    element:<UserProfile></UserProfile>
                 }
             ]   
         },
