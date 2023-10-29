@@ -8,8 +8,8 @@ const Home = () => {
     
     return ( 
         <div>
-            <div className='flex justify-between p-12 bg-blue-400 mx-16 my-10 custom'>
-                <div className='h-auto  border-r '>
+            <div className='flex max-lg:flex-col justify-between p-12 bg-blue-400 mx-16 my-10 custom max-sm:mx-0'>
+                <div className='h-auto  border-r max-lg:border-none'>
                     <img src="Images/header.png" alt="" />
 
                 </div>
@@ -25,7 +25,7 @@ const Home = () => {
                     <p>DISCOVER OUR POPULAR COURSES</p>
                     <h2 className='text-4xl my-3'>Expand Your Career Opportunity <br /> With Our Courses</h2>
             </div>
-            <div className='grid grid-cols-3 gap-5 mx-48 my-10 text-center h-auto'>
+            <div className='grid lg:grid-cols-3 gap-5 mx-48 my-10 text-center h-auto max-md:grid-cols-1 md:grid-cols-2 max-sm:mx-5'>
                 
                 
                     {

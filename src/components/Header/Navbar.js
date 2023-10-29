@@ -27,14 +27,14 @@ const Navbar = () => {
             
             <div className=''>
                 <Link className={collapse?'hidden':''} to='/'><img className='inline-block w-32 mr-5 pr-5' src="Images/logo.png" alt="" /></Link>
-                <NavLink className='m-2 p-2 max-md:hidden' to='/'>Home</NavLink>
-                <NavLink className='m-2 p-2 max-md:hidden' to='/courses'>Courses</NavLink>
-                <NavLink className='m-2 max-md:hidden' to='/faq'>FAQ</NavLink>
-                <NavLink className='m-2 max-md:hidden' to='/blog'>Blog</NavLink>
+                <NavLink className='m-2 p-2 max-lg:hidden' to='/'>Home</NavLink>
+                <NavLink className='m-2 p-2 max-lg:hidden' to='/courses'>Courses</NavLink>
+                <NavLink className='m-2 max-lg:hidden' to='/faq'>FAQ</NavLink>
+                <NavLink className='m-2 max-lg:hidden' to='/blog'>Blog</NavLink>
             </div>
                 
             
-            <div className='max-md:hidden'>
+            <div className='max-lg:hidden'>
                 <p className='inline-block mr-5'>{user && <>Welcome, {user.displayName}</>}</p>
                 {user?.uid? 
                 <><button onClick={handelSignOut} className='m-2 px-3 py-2 border border-blue-400 rounded hover:bg-blue-500 hover:text-white'>Log Out</button>
@@ -44,7 +44,7 @@ const Navbar = () => {
                 </>
                 }
             </div>
-            <div className={collapse? 'absolute w-4/6 mx-16 top-16 justify-between border p-8 bg-white border-gray-300 flex animator md:hidden': 'hidden'}>
+            <div className={collapse? 'absolute w-4/6 mx-16 top-16 justify-between border p-8 bg-white border-gray-300 flex animator lg:hidden': 'hidden'}>
             <>
                 
                 <nav>
@@ -65,7 +65,7 @@ const Navbar = () => {
                     </>
                 }
                </div>
-               <div onClick={handleCollapse} className="hidden max-md:block h-10">
+               <div onClick={handleCollapse} className="hidden max-lg:block h-10">
                     {collapse?
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -77,7 +77,7 @@ const Navbar = () => {
             </>
             </div>
             
-                <div onClick={handleCollapse} className="hidden max-md:block mr-10">
+                <div onClick={handleCollapse} className="hidden max-lg:block mr-10">
                     {collapse?
                     '':   
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"         className="w-6 h-6">
