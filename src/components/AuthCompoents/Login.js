@@ -2,20 +2,29 @@ import React, { useContext } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { authProvider } from '../../Context/Context';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 
 
 const Login = () => {
     
 
-    const { user, signInGoogle} = useContext(authProvider);
+    const { user, loader, signInGoogle} = useContext(authProvider);
     const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    
+
+
 
     const handelGoogleLogin = () => {
         signInGoogle (googleProvider)
             .then (result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             })
             .catch (error => console.error(error))
         
@@ -28,7 +37,7 @@ const Login = () => {
                 <>
                     <section className='info'>
                         <div className='w-full my-10 bg-blue-400 custom text-center'>
-                            <h1 className='text-white text-6xl p-10'>Logged In</h1>
+                            <h1 className='text-white text-6xl p-10'>{user?.emailVerified? 'Already Logged In':'Please Verify Your Email'}</h1>
                         </div>
                     </section>
                 </>:
