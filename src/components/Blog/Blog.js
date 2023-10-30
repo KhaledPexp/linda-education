@@ -8,7 +8,7 @@ const Blog = () => {
             <div className='w-full my-10 bg-blue-400 custom text-center'>
             <h1 className='text-white text-6xl p-10'>Blog</h1>
         </div>
-        <div className='mx-auto px-8 max-w-screen-lg grid grid-cols-2 gap-10 mt-16 justify-center'>
+        <div className='mx-auto px-8 max-w-screen-lg grid grid-cols-2 gap-10 mt-16 justify-center max-lg:grid-cols-1'>
             <div className='shadow-md border rounded transition duration-300 transform p-5 hover:scale-105 group hover:shadow-xl'>
                 <article className='rounded text-left p-2 flex justify-between items-center'>
                   <div>

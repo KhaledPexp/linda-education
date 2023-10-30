@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { authProvider } from '../../Context/Context';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
     
+    const [errorMsg, setErrorMsg] = useState(null);
 
     const { user,signInGithub, signInGoogle, signInWithPassword} = useContext(authProvider);
     const googleProvider = new GoogleAuthProvider();
@@ -31,7 +32,9 @@ const Login = () => {
                 navigate(from, {replace: true})
                 toast.success('Your have successfully logged in')
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                setErrorMsg(error.message);
+            })
 
 
     }
@@ -43,7 +46,9 @@ const Login = () => {
                 navigate(from, {replace: true})
                 toast.success('Your Github login was successful')
             })
-            .catch (error => console.error(error))
+            .catch (error => {
+                setErrorMsg(error.message);
+            })
         
     }
 
@@ -55,7 +60,9 @@ const Login = () => {
                 navigate(from, {replace: true})
                 toast.success('Your google login was successful')
             })
-            .catch (error => console.error(error))
+            .catch (error => {
+                setErrorMsg(error.message);
+            })
         
     }
 
@@ -77,7 +84,7 @@ const Login = () => {
                         </div>
                     </section>
                     <section className='flex justify-center w-full'>
-                    <div className='mt-10 border border-gray-300 p-8 w-2/6 rounded shadow-md'>
+                    <div className='mt-10 border border-gray-300 p-8 w-2/6 rounded shadow-md max-lg:w-3/6 max-md:w-4/6 max-sm:w-5/6'>
                         <form className="mb-8 space-y-5" onSubmit={(e) => handleSignInWithEmail(e)}>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Your Email</span>
@@ -87,6 +94,9 @@ const Login = () => {
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>
                                 <input className="w-full border border-gray-300 p-2 rounded" name="password" type="password" placeholder="••••••••" required/>
                             </label>
+                            <div className={errorMsg? 'block text-red-500':'hidden'}>
+                                <p>{errorMsg}</p>
+                            </div>
                             <div className="text-red-600 mb-0"></div>
                                 <input type="submit" className="w-full text-white text-lg cursor-pointer py-3 mt-1 bg-amber-300 hover:bg-amber-200 transition-all" value="Login Now"/>
                            

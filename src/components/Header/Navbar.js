@@ -23,7 +23,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='flex justify-between items-center mx-16 px-8 py-5'>
+        <div className='flex justify-between items-center mx-16 px-8 py-5 max-sm:mx-0'>
             
             <div className=''>
                 <Link className={collapse?'hidden':''} to='/'><img className='inline-block w-32 mr-5 pr-5' src="Images/logo.png" alt="" /></Link>

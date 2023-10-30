@@ -33,7 +33,7 @@ const UserProfile = () => {
     return (user?
         <>
             <div className='text-center flex justify-center mt-10'>
-            <div className='w-2/5 border border-gray-300 p-10 shadow-md'>
+            <div className='w-2/5 border border-gray-300 p-10 shadow-md max-lg:w-3/5 max-sm:w-4/5'>
                 <h1 className='pb-5'>CHECK AND EDIT YOUR PROFILE</h1>
                 <p>This Is Your Profile Page. You Can Edit Your Info Here!</p>
                 <img className='w-10 h-10 rounded-full mx-auto mt-10' src={user?.photoURL} alt="ProfilePicture" />

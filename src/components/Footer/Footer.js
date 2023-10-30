@@ -12,7 +12,7 @@ const Footer = () => {
                     </div>
                 
                 </div>
-                <div className='max-lg:inline-block max-lg:my-5 max-lg:p-4'>
+                <div className='max-lg:inline-block max-lg:my-5 max-lg:p-4 max-sm:my-0'>
                     <ul> <p>Category</p>
                         <li><a href="">Computer Science</a></li>
                         <li><a href="">Teaching</a></li>
@@ -48,7 +48,7 @@ const Footer = () => {
                         <li>Bonn, 53115 NRW, </li>
                         <li>Germany</li>
                         <li>Call Us: +13072224726</li>
-                        <li>khaledmahmud.de@gmail.com</li>
+                        <li className='max-sm:hidden'>khaledmahmud.de@gmail.com</li>
                     </ul>
                 </div>
                

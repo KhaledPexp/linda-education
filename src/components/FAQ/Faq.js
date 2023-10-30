@@ -6,13 +6,13 @@ import Item from '../Item/Item';
 
 const Faq = () => {
     return (
-        <div className='mx-16 my-14 flex justify-center'>
-            <div className=' w-3/6 text-center'>
+        <div className='mx-16 my-14 flex justify-center max-lg:mx-auto'>
+            <div className=' w-3/6 text-center max-lg:w-4/6 max-sm:w-5/6'>
                 <div >
                     <div className='flex justify-center my-16 '>
                         <Link className='mx-10 bg-sky-50 w-10 h-10 rounded-full '><svg className="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52"><polygon strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon></svg></Link>
                     </div>
-                    <h1 className='text-5xl font-bold pb-5'>FAQ Check Out this FAQ questions to Know your desired answer</h1>
+                    <h1 className='text-5xl font-bold pb-5'>Check Out this FAQ questions to Know your desired answer</h1>
                     <p className='my-5'>This section for the user who wants to know more about our courses or about our service. Feel free to check you the questions to get your answer.</p>
 
                     <div className='space-y-4 mt-16'>

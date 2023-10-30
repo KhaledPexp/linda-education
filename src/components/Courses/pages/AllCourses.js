@@ -7,7 +7,7 @@ const AllCourses = () => {
     const CoursesArray = AllCourses[0].AllCourses;
 
     return (
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='grid grid-cols-2 gap-10 max-sm:grid-cols-1'>
             {
                 CoursesArray.map((course, idx) => {
                     

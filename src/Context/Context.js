@@ -60,7 +60,7 @@ const Context = ({children}) => {
     const [AllCourses, setAllCourses] =  useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:8080/courses')
+        fetch('https://linda-edu-ehqll0g22-khaled-mahmuds-projects.vercel.app/courses')
         .then(res => res.json())
         .then(data => setAllCourses(data))
         .catch(error => console.error(error))

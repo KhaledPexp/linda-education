@@ -21,8 +21,8 @@ const CourseDetails = () => {
                     <h1 className='text-white text-6xl p-10'>{singleCourseDetails.category}</h1>
                 </div>
             </section>
-            <section className='courses-details  flex justify-center mx-16 my-16 p-5 leading-loose text-xl' >
-                <div className='text-center mx-auto w-3/6'>
+            <section className='courses-details  flex justify-center mx-16 my-16 p-5 leading-loose text-xl max-md:mx-auto' >
+                <div className='text-center mx-auto w-3/6 max-lg:w-4/6 max-sm:w-5/6'>
                      <button onClick={createPDF} className='btn rounded bg-amber-300 px-6 py-3 hover:bg-amber-200'>Download Course as Pdf</button>
                      <h1 className='text-5xl font-bold text-center mt-10'>{singleCourseDetails.name}</h1>
                      <p className='mt-10 leading-normal'>{singleCourseDetails.short_description}</p>

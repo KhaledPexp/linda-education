@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () =>  fetch('http://localhost:8080/category/01')
+                    loader: () =>  fetch('https://linda-edu-ehqll0g22-khaled-mahmuds-projects.vercel.app/category/01')
                 },
                 {
                     path: '/courses',
@@ -73,7 +73,7 @@ const routes = createBrowserRouter([
                 {
                     path:'/course-details/:id',
                     element: <CourseDetails></CourseDetails>,
-                    loader: ({params}) => fetch(`http://localhost:8080/course/${params.id}`)
+                    loader: ({params}) => fetch(`https://linda-edu-ehqll0g22-khaled-mahmuds-projects.vercel.app/course/${params.id}`)
                 },
                 {
                     path:'/faq',
@@ -94,7 +94,7 @@ const routes = createBrowserRouter([
                 {
                     path:'/checkOut/:id',
                     element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>,
-                    loader: ({params}) => fetch(`http://localhost:8080/checkOut/${params.id}`)
+                    loader: ({params}) => fetch(`https://linda-edu-ehqll0g22-khaled-mahmuds-projects.vercel.app/checkOut/${params.id}`)
                 },
                 {
                     path:'/userProfile',

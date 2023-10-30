@@ -3,7 +3,7 @@ import React from 'react';
 const SingleCourseDetails = () => {
     return (
         <div>
-            this is single course details
+            This is single course details
         </div>
     );
 };
